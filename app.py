@@ -14,12 +14,7 @@ app = Flask(__name__)
 CORS(app)
 
 
-helper = None
-
-
-@app.before_first_request
-def startup():
-    helper = Helper("static/pokemon.csv")
+helper = Helper("static/pokemon.csv")
 
 
 # Route to get moves via hashmap implementation
