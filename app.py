@@ -6,13 +6,20 @@ import time
 # Helper class that contains instances of all the data structures
 from modules.helper import Helper
 
-helper = Helper("static/pokemon.csv")
 
 # instantiate the Flask app & enable cors (security policy)
 app = Flask(__name__)
 
 # enable CORS
 CORS(app)
+
+
+helper = None
+
+
+@app.before_first_request
+def startup():
+    helper = Helper("static/pokemon.csv")
 
 
 # Route to get moves via hashmap implementation
