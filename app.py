@@ -71,8 +71,6 @@ def get_pokemon_hashmap():
     return response
 
 # Route to get moves via splaytree implementation
-
-
 @app.route("/splaytree/moves", methods=['GET'])
 # @cross_origin()
 def get_move_splay_tree():
@@ -100,8 +98,6 @@ def get_move_splay_tree():
     return response
 
 # Route to get pokemon via splaytree
-
-
 @app.route("/splaytree/pokemon", methods=['GET'])
 # @cross_origin()
 def get_pokemon_splay_tree():
