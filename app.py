@@ -18,8 +18,6 @@ helper = Helper("static/pokemon.csv")
 
 
 # Route to get moves via hashmap implementation
-
-
 @app.route("/hashmap/moves", methods=['GET'])
 # @cross_origin()
 def get_move_hashmap():
@@ -45,9 +43,10 @@ def get_move_hashmap():
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
+# Route to get moves via pokemon name
+
 
 @app.route("/hashmap/pokemon", methods=['GET'])
-# @cross_origin()
 def get_pokemon_hashmap():
     pokemon = request.args.get('name')
     print(pokemon)
@@ -71,7 +70,7 @@ def get_pokemon_hashmap():
     response.headers.add('Access-Control-Allow-Origin', '*')  # CORS
     return response
 
-# Route to get move via splaytree implementation
+# Route to get moves via splaytree implementation
 
 
 @app.route("/splaytree/moves", methods=['GET'])
@@ -99,6 +98,8 @@ def get_move_splay_tree():
     response = jsonify(status=400, details='Move does not exist!')
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
+
+# Route to get pokemon via splaytree
 
 
 @app.route("/splaytree/pokemon", methods=['GET'])
