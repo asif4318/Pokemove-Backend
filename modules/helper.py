@@ -16,7 +16,7 @@ class Helper:
         self.create_hash_map()
         print('Loading Hashmap complete!')
 
-        # Graph implementation no longer used
+        # Bipartite Graph implementation no longer used
         # print('Loading Graph!')
         # self.graph_implementation = self.create_graph()
         # print('Loading Graph complete!')
@@ -31,6 +31,7 @@ class Helper:
     def get_pokemon_hash(self, pokemon_name: str) -> list[str]:
         return self.pokemon_hash_implementation[pokemon_name]
 
+    # Bipartite Graph implementation is not used
     # def get_move_graph(self, move_name: str) -> list[str]:
     #     return self.graph_implementation.return_adj_pokemon_nodes(move_name)
 
@@ -48,7 +49,8 @@ class Helper:
         return None
 
 
-# Unused from graph implementation
+# Unused from bipartite graph implementation
+
     def create_graph(self) -> Graph:
         graph: Graph = Graph()
         with open(self.csv_path) as csv_file:
